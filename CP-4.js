@@ -1,19 +1,61 @@
 // A soma de um intervalo
 
-// function range(start, end, increment) {
-//     let result = [];
-//     for(let i = start; i <= end; i += increment) {
-//         result.push(i)
-//     }
-//     console.log(result);
-//     let sum = 0;
-//     result.map(index => {
-//         sum += index
-//     })
-//     console.log(sum);
-// }
+function range(start, end, increment) {
+    let result = [];
+    for(let i = start; i <= end; i += increment) {
+        result.push(i)
+    }
+    console.log(result);
+    let sum = 0;
+    result.map(index => {
+        sum += index
+    })
+    console.log(sum);
+}
 
 // range(0, 10, 2);
+
+// Melhoria
+
+function range(start = 0, end = 0, increment = 1) {
+    const result = [];
+    let sum = 0;
+    
+    for(let i = start; i <= end; i += increment) {
+        result.push(i);
+    }
+    
+    console.log(result);
+    
+    result.forEach(index => {
+        sum += index;
+    })
+    
+    console.log(sum);
+}
+
+range(0, 10, 2);
+
+// Melhoria com reduce
+
+function range(start = 0, end = 0, increment = 1) {
+    const resultList = [];
+    let sum = 0;
+    
+    for(let i = start; i <= end; i += increment) {
+        resultList.push(i);
+    }
+    
+    console.log(resultList);
+    
+    sum = resultList.reduce((accumulator, current) => {
+        return accumulator + current;
+    }, 0);
+    
+    console.log(sum);
+}
+
+range(0, 10, 2);
 
 // Invertendo um array
 
