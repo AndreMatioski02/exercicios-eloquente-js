@@ -1,3 +1,5 @@
+// Nomes dos meses
+
 const findTheMounth = function () {
   const mounths = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
 
