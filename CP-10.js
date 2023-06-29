@@ -1,13 +1,13 @@
 // Nomes dos meses
 
-const findTheMounth = function () {
+const findTheMounth = (() => {
   const mounths = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
 
   return {
-    name: function (number) { return mounths[number]; },
-    number: function (name) { return mounths.indexOf(name); }
+    name:  number => mounths[number],
+    number: name => mounths.indexOf(name)
   };
-}();
+})();
 
 
 console.log(findTheMounth.name(2));

@@ -1,0 +1,48 @@
+<!doctype html>
+<script src="./MOUNTAINS.js"></script>
+<script src="./chapter-13-dom.js"></script>
+
+<style>
+  /* Define uma visualização mais limpa para tabelas */
+  table  { border-collapse: collapse; }
+  td, th { border: 1px solid black; padding: 3px 8px; }
+  th     { text-align: left; }
+</style>
+
+<body>
+<script>
+  function buildTable(data) {
+    const fields = data;
+    const headerFields = Object.keys(fields[0]);
+
+    let table = document.createElement("table");  
+
+    let headRow = document.createElement("tr");
+
+    headerFields.forEach(field => {
+      let headCell = document.createElement("th");
+      headCell.textContent = field;
+      headRow.appendChild(headCell);
+    });
+
+    table.appendChild(headRow);
+
+    fields.forEach(object => {
+      let bodyRow = document.createElement("tr");
+
+      headerFields.forEach(field => {
+        let bodyCell = document.createElement("td");
+        bodyCell.textContent = object[field];
+        if (typeof object[field] === "number") bodyCell.style.textAlign = "right";
+        bodyRow.appendChild(bodyCell);
+      });
+
+      table.appendChild(bodyRow);
+    });
+
+    return table;
+  }
+
+  document.body.appendChild(buildTable(MOUNTAINS));
+</script>
+</body>

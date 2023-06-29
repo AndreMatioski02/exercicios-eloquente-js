@@ -1,0 +1,13 @@
+<!doctype html>
+
+<input type="text">
+
+<script>
+  const inputField = document.querySelector("input");
+  inputField.addEventListener("keydown", event => {
+    if (event.keyCode == "Q".charCodeAt(0) ||
+        event.keyCode == "W".charCodeAt(0) ||
+        event.keyCode == "X".charCodeAt(0))
+      event.preventDefault();
+  });
+</script>
