@@ -4,10 +4,9 @@
 
 <script>
   const inputField = document.querySelector("input");
+  const preventChars = 'Q,W,X,q,w,x'.split(',').map((char) => char.charCodeAt(0));
+
   inputField.addEventListener("keydown", event => {
-    if (event.keyCode == "Q".charCodeAt(0) ||
-        event.keyCode == "W".charCodeAt(0) ||
-        event.keyCode == "X".charCodeAt(0))
-      event.preventDefault();
+    if (preventChars.includes(event.keyCode)) event.preventDefault();
   });
 </script>
